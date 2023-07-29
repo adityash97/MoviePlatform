@@ -41,9 +41,9 @@ class UserRegisterAPIView(APIView):
         serializer = UserRegisterSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            # get token for serilaizer
             response = {
                 'success': True,
+                'user': serializer.data,
                 'token': Token.objects.get(user=User.objects.get(username=serializer.data['username'])).key
             }
             return Response(response, status=status.HTTP_200_OK)
