@@ -5,9 +5,30 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Carousel } from "./Carousel";
+
+// code for api test
+import { useEffect } from "react";
+import axios from "axios";
+
 export function Home() {
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get("http://localhost:8000/account/test/");
+        console.log("data:", response.data);
+      } catch (err) {
+        console.log("error:", err);
+      }
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <>
+      <p className="text-white fw-bold d-flex justify-content-center">
+        Check python and react server.Check console for data
+      </p>
       <div className="search-bar d-flex justify-content-center">
         <div className="input-group input-group-lg w-75 ">
           {/* options */}
@@ -51,7 +72,7 @@ export function Home() {
             aria-label="Text input with dropdown button"
           />
           {/* search button */}
-          <span class="input-group-text btn btn-light">
+          <span className="input-group-text btn btn-light">
             <FontAwesomeIcon icon={faSearch} shake />
           </span>
         </div>
@@ -69,7 +90,7 @@ export function Home() {
         />
       </div>
       {/* follow us icon cards */}
-      
+
       {/* carousels */}
 
       <Carousel />

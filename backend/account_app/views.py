@@ -58,3 +58,18 @@ class UserLogoutAPIView(APIView):
         token = Token.objects.get(user=request.user)
         token.delete()
         return Response({"success": True, "detail": "Logged out!"}, status=status.HTTP_200_OK)
+
+
+class UserSampleData(APIView):
+    data = {
+        "username": "Aditya",
+        "first_name": "Aditya",
+        "last_name": "Anand",
+        "password": "password123@",
+        "password2": "password123@",
+        "email": "adityash212@gmail.com"
+    }
+
+    def get(self, request):
+        print("Returing sample data")
+        return Response(self.data)
