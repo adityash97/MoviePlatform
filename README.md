@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Movie Platform README</title>
+  <p><b>Movie Platform README</b></p>
 </head>
 
 <body>
