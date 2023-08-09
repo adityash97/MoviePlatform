@@ -7,5 +7,5 @@ urlpatterns = [
     path("login/", UserLoginAPIView.as_view(), name="user_login"),
     path("register/", UserRegisterAPIView().as_view(), name="user_register"),
     path("logout/", UserLogoutAPIView.as_view(), name="user_logout"),
-    path("test/", UserSampleData.as_view(), name="user_sample_data")
+    path("test/", UserSampleData.as_view(), name="user_sample_data") # TODO :Remove this
 ]
