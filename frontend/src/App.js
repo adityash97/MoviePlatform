@@ -6,6 +6,7 @@ import { Router } from "./router/routes.js";
 import {UserRouter} from "./router/user-routes.js"
 function App() {
   return (
+    // use react bootstrap instead of bootstrap
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<IndexLayout/>}>
